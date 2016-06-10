@@ -3,21 +3,27 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hello World | 丁先生</title>
+  <title>getElementsByClassName的兼容代码 | 丁先生</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+  <meta name="description" content="//&amp;nbsp;getElementsByClassName()&amp;nbsp;返回文档中所有指定类名的元素集合，作为NodeList对象
+//&amp;nbsp;element&amp;nbsp;包括doucument或父节点parenetElement
+//&amp;nbsp;names&amp;nbsp;目标元素的所有class类名
+function&amp;nbsp;getElementsByClassName(element,&amp;n">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="mrding.ren/2016/06/10/hello-world/index.html">
+<meta property="og:title" content="getElementsByClassName的兼容代码">
+<meta property="og:url" content="mrding.ren/2015/11/01/getelementsbyclassname-e7-9a-84-e5-85-bc-e5-ae-b9-e4-bb-a3-e7-a0-81/index.html">
 <meta property="og:site_name" content="丁先生">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
-<meta property="og:updated_time" content="2016-06-10T06:30:45.317Z">
+<meta property="og:description" content="//&amp;nbsp;getElementsByClassName()&amp;nbsp;返回文档中所有指定类名的元素集合，作为NodeList对象
+//&amp;nbsp;element&amp;nbsp;包括doucument或父节点parenetElement
+//&amp;nbsp;names&amp;nbsp;目标元素的所有class类名
+function&amp;nbsp;getElementsByClassName(element,&amp;n">
+<meta property="og:updated_time" content="2016-06-10T07:36:06.776Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="getElementsByClassName的兼容代码">
+<meta name="twitter:description" content="//&amp;nbsp;getElementsByClassName()&amp;nbsp;返回文档中所有指定类名的元素集合，作为NodeList对象
+//&amp;nbsp;element&amp;nbsp;包括doucument或父节点parenetElement
+//&amp;nbsp;names&amp;nbsp;目标元素的所有class类名
+function&amp;nbsp;getElementsByClassName(element,&amp;n">
   
     <link rel="alternate" href="/atom.xml" title="丁先生" type="application/atom+xml">
   
@@ -66,12 +72,16 @@ Quick">
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-getelementsbyclassname-e7-9a-84-e5-85-bc-e5-ae-b9-e4-bb-a3-e7-a0-81" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/06/10/hello-world/" class="article-date">
-  <time datetime="2016-06-10T06:30:45.295Z" itemprop="datePublished">2016-06-10</time>
+    <a href="/2015/11/01/getelementsbyclassname-e7-9a-84-e5-85-bc-e5-ae-b9-e4-bb-a3-e7-a0-81/" class="article-date">
+  <time datetime="2015-11-01T03:33:46.000Z" itemprop="datePublished">2015-11-01</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JAVASCRIPT/">JAVASCRIPT</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -80,7 +90,7 @@ Quick">
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      getElementsByClassName的兼容代码
     </h1>
   
 
@@ -88,20 +98,47 @@ Quick">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <pre class="brush:js;toolbar:false">//&nbsp;getElementsByClassName()&nbsp;返回文档中所有指定类名的元素集合，作为NodeList对象
+//&nbsp;element&nbsp;包括doucument或父节点parenetElement
+//&nbsp;names&nbsp;目标元素的所有class类名
+function&nbsp;getElementsByClassName(element,&nbsp;names)&nbsp;{
+    if&nbsp;(element.getElementsByClassName)&nbsp;{&nbsp;//&nbsp;若浏览器支持该方法
+        return&nbsp;element.getElementsByClassName(names);
+    }&nbsp;else&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;不支持
+        //&nbsp;获取element的所有子元素节点
+        var&nbsp;elements&nbsp;=&nbsp;element.getElementsByTagName(&quot;*&quot;),
+            result&nbsp;&nbsp;&nbsp;=&nbsp;[];&nbsp;&nbsp;&nbsp;//&nbsp;存储最终获取的目标元素集合
+        var&nbsp;element,
+            classNameStr,&nbsp;
+            flag;
 
+        names&nbsp;=&nbsp;names.split(&quot;&nbsp;&quot;);&nbsp;//&nbsp;获得包含所有class类名的数组
+        //&nbsp;循环父元素中的所有子元素节点
+        for&nbsp;(var&nbsp;i&nbsp;=&nbsp;0;&nbsp;element&nbsp;=&nbsp;elements[i];&nbsp;i++)&nbsp;{
+            classNameStr&nbsp;=&nbsp;&quot;&nbsp;&quot;&nbsp;+&nbsp;element.className&nbsp;+&nbsp;&quot;&nbsp;&quot;;&nbsp;//&nbsp;存储子元素节点的class类名
+            flag&nbsp;=&nbsp;true;
+            //&nbsp;判断该子元素节点的class类名是否与所求目标元素的class类名相等
+            for&nbsp;(var&nbsp;j&nbsp;=&nbsp;0,&nbsp;name;&nbsp;name&nbsp;=&nbsp;names[j];&nbsp;j++)&nbsp;{
+                //&nbsp;若该子节点元素不符合则排除该子节点元素跳出当前循环
+                if&nbsp;(classNameStr.indexOf(&quot;&nbsp;&quot;&nbsp;+&nbsp;name&nbsp;+&nbsp;&quot;&nbsp;&quot;)&nbsp;==&nbsp;-1)&nbsp;{
+                    flag&nbsp;=&nbsp;false;&nbsp;//&nbsp;排除该子节点元素
+                    break;
+                }
+            };
+
+            //&nbsp;该子节点元素的class类名与目标节点元素class类名相符则将该元素存入result数组
+            if&nbsp;(flag)&nbsp;{
+                result.push(element);&nbsp;
+            }
+        }
+
+        return&nbsp;result;&nbsp;&nbsp;//&nbsp;返回结果集
+    }
+}</pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="mrding.ren/2016/06/10/hello-world/" data-id="cip9fd3ap001hy0ycqh1iwebv" class="article-share-link">Share</a>
+      <a data-url="mrding.ren/2015/11/01/getelementsbyclassname-e7-9a-84-e5-85-bc-e5-ae-b9-e4-bb-a3-e7-a0-81/" data-id="cip9fd39r000vy0ycrgnk74k6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -110,19 +147,19 @@ Quick">
     
 <nav id="article-nav">
   
-    <a href="/2016/06/10/test/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2015/11/03/e7-bd-91-e6-98-93-e5-89-8d-e7-ab-af-e5-be-ae-e4-b8-93-e4-b8-9adom-e7-bc-96-e7-a8-8b-e8-80-83-e8-af-95-e9-a2-98-e6-97-a5-e6-9c-9f-e7-ba-a7-e8-81-94-e4-b8-8b-e6-8b-89-e9-80-89-e6-8b-a9-e6-a1-86/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          test
+          日期级联下拉选择框代码实现
         
       </div>
     </a>
   
   
-    <a href="/2016/04/24/e5-ad-a6-e4-bc-9a-e7-94-9f-e6-b4-bb/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2015/10/22/javascript-e6-95-b0-e5-ad-97-e7-b1-bb-e5-9e-8b-e6-95-b0-e7-bb-84-e4-b8-ad-e6-9f-a5-e6-89-be-e6-8c-87-e5-ae-9a-e6-95-b0-e5-ad-97-e7-9a-84-e5-8a-9f-e8-83-bd/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">学会生活</div>
+      <div class="article-nav-title">javascript--数字类型数组中查找指定数字的功能</div>
     </a>
   
 </nav>

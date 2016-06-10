@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>javascript--数字类型数组中查找指定数字的功能 | 丁先生</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="今天下午做网易微课堂中javascript考试题，有一道是关于已排序数字类型数组中查找指定数字的,代码：
+function&amp;nbsp;search(arr,&amp;nbsp;dst)&amp;nbsp;{&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+&amp;nbsp;&amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript--数字类型数组中查找指定数字的功能">
+<meta property="og:url" content="mrding.ren/2015/10/22/javascript-e6-95-b0-e5-ad-97-e7-b1-bb-e5-9e-8b-e6-95-b0-e7-bb-84-e4-b8-ad-e6-9f-a5-e6-89-be-e6-8c-87-e5-ae-9a-e6-95-b0-e5-ad-97-e7-9a-84-e5-8a-9f-e8-83-bd/index.html">
+<meta property="og:site_name" content="丁先生">
+<meta property="og:description" content="今天下午做网易微课堂中javascript考试题，有一道是关于已排序数字类型数组中查找指定数字的,代码：
+function&amp;nbsp;search(arr,&amp;nbsp;dst)&amp;nbsp;{&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+&amp;nbsp;&amp;">
+<meta property="og:updated_time" content="2016-06-10T07:36:06.776Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="javascript--数字类型数组中查找指定数字的功能">
+<meta name="twitter:description" content="今天下午做网易微课堂中javascript考试题，有一道是关于已排序数字类型数组中查找指定数字的,代码：
+function&amp;nbsp;search(arr,&amp;nbsp;dst)&amp;nbsp;{&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+&amp;nbsp;&amp;">
+  
+    <link rel="alternate" href="/atom.xml" title="丁先生" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">丁先生</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="mrding.ren"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-javascript-e6-95-b0-e5-ad-97-e7-b1-bb-e5-9e-8b-e6-95-b0-e7-bb-84-e4-b8-ad-e6-9f-a5-e6-89-be-e6-8c-87-e5-ae-9a-e6-95-b0-e5-ad-97-e7-9a-84-e5-8a-9f-e8-83-bd" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/10/22/javascript-e6-95-b0-e5-ad-97-e7-b1-bb-e5-9e-8b-e6-95-b0-e7-bb-84-e4-b8-ad-e6-9f-a5-e6-89-be-e6-8c-87-e5-ae-9a-e6-95-b0-e5-ad-97-e7-9a-84-e5-8a-9f-e8-83-bd/" class="article-date">
+  <time datetime="2015-10-22T09:40:19.000Z" itemprop="datePublished">2015-10-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JAVASCRIPT/">JAVASCRIPT</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      javascript--数字类型数组中查找指定数字的功能
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天下午做网易微课堂中javascript考试题，有一道是关于已排序数字类型数组中查找指定数字的,代码：</p>
+<pre class="brush:js;toolbar:false">function&nbsp;search(arr,&nbsp;dst)&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;firstIndex&nbsp;=&nbsp;0,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lastIndex&nbsp;&nbsp;=&nbsp;arr.length&nbsp;-&nbsp;1,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;获得数组的中间值的键值
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;middle&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;Math.floor((firstIndex&nbsp;+&nbsp;lastIndex)/2);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;循环使用二分法
+&nbsp;&nbsp;&nbsp;&nbsp;while(arr[middle]&nbsp;!=&nbsp;dst&nbsp;&amp;&amp;&nbsp;firstIndex&nbsp;&lt;&nbsp;lastIndex){
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;判断目标值的位置
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(dst&nbsp;&lt;&nbsp;arr[middle])&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lastIndex&nbsp;&nbsp;=&nbsp;middle&nbsp;-&nbsp;1;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;firstIndex&nbsp;=&nbsp;middle&nbsp;+&nbsp;1;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;重新获取中间值的键值
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;middle&nbsp;=&nbsp;Math.floor((lastIndex&nbsp;+&nbsp;fisrtIndex)/2);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;返回目标数字在数组中的
+&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;(arr[middle]&nbsp;!=&nbsp;dst)&nbsp;?&nbsp;-1&nbsp;:&nbsp;middle;
+&nbsp;&nbsp;&nbsp;&nbsp;}
+数组排序：
+function&nbsp;compare(value1,value2)&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(value1&nbsp;&lt;&nbsp;value2)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;-1;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;if&nbsp;(value1&nbsp;&gt;&nbsp;value2)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;1;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;0;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;arr.sort(compare);
+&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;arr1&nbsp;=&nbsp;[56,&nbsp;21,&nbsp;4,&nbsp;26,&nbsp;7,&nbsp;9,&nbsp;19,20,&nbsp;30,&nbsp;40,&nbsp;45,&nbsp;47,1,3];
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;alert(arr1.sort(compare));&nbsp;//&nbsp;1,&nbsp;3,&nbsp;4,&nbsp;7,&nbsp;9,&nbsp;19,&nbsp;20,&nbsp;21,&nbsp;26,&nbsp;30,&nbsp;40,&nbsp;45,&nbsp;47,&nbsp;56</pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="mrding.ren/2015/10/22/javascript-e6-95-b0-e5-ad-97-e7-b1-bb-e5-9e-8b-e6-95-b0-e7-bb-84-e4-b8-ad-e6-9f-a5-e6-89-be-e6-8c-87-e5-ae-9a-e6-95-b0-e5-ad-97-e7-9a-84-e5-8a-9f-e8-83-bd/" data-id="cip9fd3a00012y0ycbe5l2ucp" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/11/01/getelementsbyclassname-e7-9a-84-e5-85-bc-e5-ae-b9-e4-bb-a3-e7-a0-81/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          getElementsByClassName的兼容代码
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/10/20/js-e7-ac-94-e8-ae-b0-e5-8f-98-e9-87-8f-e6-89-a7-e8-a1-8c-e7-8e-af-e5-a2-83-e5-8f-8a-e4-bd-9c-e7-94-a8-e5-9f-9f/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">JS笔记--变量执行环境及作用域</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JAVASCRIPT/">JAVASCRIPT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/书山有路/">书山有路</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/学习/">学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/考研日记/">考研日记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/若有所思/">若有所思</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学英语，考研/">学英语，考研</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/考研/">考研</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/学英语，考研/" style="font-size: 10px;">学英语，考研</a> <a href="/tags/考研/" style="font-size: 10px;">考研</a> <a href="/tags/读书笔记/" style="font-size: 10px;">读书笔记</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/06/10/test/">test</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/10/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2016/04/24/e5-ad-a6-e4-bc-9a-e7-94-9f-e6-b4-bb/">学会生活</a>
+          </li>
+        
+          <li>
+            <a href="/2016/04/24/byebye-trashed/">byebye</a>
+          </li>
+        
+          <li>
+            <a href="/2016/03/28/git-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b01-e6-9c-ac-e5-9c-b0-e5-88-9b-e5-bb-ba-e7-89-88-e6-9c-ac-e5-ba-93/">git学习笔记1--本地创建版本库</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Mr.d<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
