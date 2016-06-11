@@ -295,13 +295,7 @@
             <hr>
 <p>title: 实现无刷新评论所遇几个问题<br>categories:</p>
 <ul>
-<li>JAVASCRIPT</li>
-<li>PHP<br>date: 2016-06-11 22:51:17</li>
-</ul>
-<p>tags: </p>
-<ul>
-<li>AJAX</li>
-<li>PHP</li>
+<li>JAVASCRIPT<br>date: 2016-06-11 22:51:17<br>tags: javasript,php,ajax</li>
 </ul>
 <p>使用AJAX与PHP实现无刷新评论的功能，原理是很简单的，首先使用javascript获取到表单提交的数据，之后通过ajax使用post方法传值给php,之后php在进行数据的验证之后插入数据表，并把该值再返回给Ajax用于在前台显示，但在这里我遇到二个问题。</p>
 <h4 id="第一个问题-php如何识别并获取ajax发送过来的数据？"><a href="#第一个问题-php如何识别并获取ajax发送过来的数据？" class="headerlink" title="第一个问题: php如何识别并获取ajax发送过来的数据？"></a>第一个问题: php如何识别并获取ajax发送过来的数据？</h4><p>我在网上查询之后，发现大部分网友给的答案是使用$_POST方法直接获取。。。我尝试之后发现，直接获取的数据为null(我将javascript获取得表单数据直接以json数据的格式使用ajax发送)，之后我意识到，<strong>在一种语言中的一种对象，或数据，在另一种语言中往往无法识别，我使用ajax发送js中的object对象（如： {data1: data1, data2: data2}）的数据给php，php是无法识别并获取的！</strong></p>
