@@ -1,0 +1,636 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="title: 实现无刷新评论所遇几个问题categories:
+
+JAVASCRIPT
+PHPdate: 2016-06-11 22:51:17
+
+tags: 
+
+AJAX
+PHP
+
+使用AJAX与PHP实现无刷新评论的功能，原理是很简单的，首先使用javascript获取到表单提交的数据，之后通过ajax使用post方法传值给php,之后php在进行数据的验证之后插入数据表，并把该值再返回给A">
+<meta property="og:type" content="article">
+<meta property="og:title" content="丁先生">
+<meta property="og:url" content="http://yoursite.com/2016/06/11/实现无刷新评论所遇几个问题/index.html">
+<meta property="og:site_name" content="丁先生">
+<meta property="og:description" content="title: 实现无刷新评论所遇几个问题categories:
+
+JAVASCRIPT
+PHPdate: 2016-06-11 22:51:17
+
+tags: 
+
+AJAX
+PHP
+
+使用AJAX与PHP实现无刷新评论的功能，原理是很简单的，首先使用javascript获取到表单提交的数据，之后通过ajax使用post方法传值给php,之后php在进行数据的验证之后插入数据表，并把该值再返回给A">
+<meta property="og:updated_time" content="2016-06-11T15:36:37.863Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="丁先生">
+<meta name="twitter:description" content="title: 实现无刷新评论所遇几个问题categories:
+
+JAVASCRIPT
+PHPdate: 2016-06-11 22:51:17
+
+tags: 
+
+AJAX
+PHP
+
+使用AJAX与PHP实现无刷新评论的功能，原理是很简单的，首先使用javascript获取到表单提交的数据，之后通过ajax使用post方法传值给php,之后php在进行数据的验证之后插入数据表，并把该值再返回给A">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 13929249,
+      author: '丁先生'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/06/11/实现无刷新评论所遇几个问题/"/>
+
+  <title>  | 丁先生 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">丁先生</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">愿岁月锤炼你一副丰满的灵魂和清瘦的欲望</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-11T22:51:17+08:00" content="2016-06-11">
+              2016-06-11
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <hr>
+<p>title: 实现无刷新评论所遇几个问题<br>categories:</p>
+<ul>
+<li>JAVASCRIPT</li>
+<li>PHP<br>date: 2016-06-11 22:51:17</li>
+</ul>
+<p>tags: </p>
+<ul>
+<li>AJAX</li>
+<li>PHP</li>
+</ul>
+<p>使用AJAX与PHP实现无刷新评论的功能，原理是很简单的，首先使用javascript获取到表单提交的数据，之后通过ajax使用post方法传值给php,之后php在进行数据的验证之后插入数据表，并把该值再返回给Ajax用于在前台显示，但在这里我遇到二个问题。</p>
+<h4 id="第一个问题-php如何识别并获取ajax发送过来的数据？"><a href="#第一个问题-php如何识别并获取ajax发送过来的数据？" class="headerlink" title="第一个问题: php如何识别并获取ajax发送过来的数据？"></a>第一个问题: php如何识别并获取ajax发送过来的数据？</h4><p>我在网上查询之后，发现大部分网友给的答案是使用$_POST方法直接获取。。。我尝试之后发现，直接获取的数据为null(我将javascript获取得表单数据直接以json数据的格式使用ajax发送)，之后我意识到，<strong>在一种语言中的一种对象，或数据，在另一种语言中往往无法识别，我使用ajax发送js中的object对象（如： {data1: data1, data2: data2}）的数据给php，php是无法识别并获取的！</strong></p>
+<p>而我接着查询了<strong>$_POST方法获取的数据格式，是以键值对的形式构成的中间以&amp;分割（如：username=zhangsan&amp;password=123456&amp;email=lll@1123.com）</strong>。</p>
+<p>js代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">// 获取表单数据</span><br><span class="line"></span><br><span class="line">var arr      = [ &quot;images/1.jpg&quot;, &quot;images/2.jpg&quot;, </span><br><span class="line">                 &quot;images/3.jpg&quot;, &quot;images/4.jpg&quot;, </span><br><span class="line">                 &quot;images/5.jpg&quot;];</span><br><span class="line"></span><br><span class="line">var inputVal = document.getElementsByTagName(&quot;input&quot;),</span><br><span class="line">    // data存储表单数据</span><br><span class="line">    data = null;</span><br><span class="line">// 以键值对的形式存储</span><br><span class="line">for (var i = 0; i &lt; inputVal.length; i++ ) &#123;</span><br><span class="line">    if (i == 0) &#123;</span><br><span class="line">        data  = inputVal[i].name + &quot;=&quot; + inputVal[i].value + &quot;&amp;&quot;;</span><br><span class="line">    &#125; else if (inputVal[i].name != &quot;&quot;) &#123;</span><br><span class="line">        data += inputVal[i].name + &quot;=&quot; + inputVal[i].value + &quot;&amp;&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">var oFace    = arr[Math.floor(Math.random() * 5) + 1];</span><br><span class="line">var content  = document.getElementById(&quot;content_text&quot;).value;</span><br><span class="line"></span><br><span class="line">data += &quot;face=&quot; + oFace; </span><br><span class="line">data += &quot;&amp;content=&quot; + content;</span><br></pre></td></tr></table></figure></p>
+<h4 id="第二个问题-php如何将数据表中数组形式数据以json数据形式返回ajax"><a href="#第二个问题-php如何将数据表中数组形式数据以json数据形式返回ajax" class="headerlink" title="第二个问题: php如何将数据表中数组形式数据以json数据形式返回ajax?"></a>第二个问题: php如何将数据表中数组形式数据以json数据形式返回ajax?</h4><p>这里我用到一个php自带方法：<strong>json_encode()</strong>；<br>json_encode ()用于对变量进行 JSON 编码<br>语法：</p>
+<blockquote>
+<p>json_encode(value,option)<br>value    必填，待编码的 value ，除了resource 类型之外，可以为任何数据类型。该函数只能接受 UTF-8 编码的数据<br>options    可选<br>JSON_HEX_QUOT 把双引号转为\u0022（php 5.3）<br>JSON_HEX_TAG 把&lt; &gt; 转为 \u003C 和 \u003E（php 5.3）<br>JSON_HEX_AMP 把 &amp; 转为 \u0026（php 5.3）<br>JSON_HEX_APOS 把单引号转为 \u0027.（php 5.3）<br>JSON_NUMERIC_CHECK 把数字字符串当作数字编码（php 5.3）<br>JSON_PRETTY_PRINT 使用空格格式化数据（php 5.4）<br>JSON_UNESCAPED_SLASHES 不忽略 /（php 5.4）<br>JSON_FORCE_OBJECT 使用非关联数组时输出一个对象而不是一个数组（php 5.3）<br>JSON_UNESCAPED_UNICODE 逐字编译多字节字符（php 5.4）</p>
+</blockquote>
+<p>例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">	$arr = array (&apos;a&apos;=&gt;1,&apos;b&apos;=&gt;2,&apos;c&apos;=&gt;3,&apos;d&apos;=&gt;4,&apos;e&apos;=&gt;5);</span><br><span class="line">	echo json_encode($arr); </span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure></p>
+<p>输出结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&quot;a&quot;:1,&quot;b&quot;:2,&quot;c&quot;:3,&quot;d&quot;:4,&quot;e&quot;:5&#125;</span><br></pre></td></tr></table></figure></p>
+<p>因为我在表单需传入网址故选用了JSON_UNESCAPED_SLASHES，代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$sql = &quot;select * from comments where pubTime = $pubTime&quot;;</span><br><span class="line"></span><br><span class="line">if ($mysqli_result = $mysqli -&gt; query($sql)) &#123;</span><br><span class="line">    if ($mysqli_result &amp;&amp; $mysqli_result -&gt; num_rows &gt; 0) &#123;</span><br><span class="line">        $row = $mysqli_result -&gt; fetch_assoc();</span><br><span class="line">        echo json_encode($row, JSON_UNESCAPED_SLASHES);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>另，在php较早版本中，可以自己重写一个函数，用于达到相同的效果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">/* 不转义中文字符和\/的 json 编码方法</span><br><span class="line"> * @param array $arr 待编码数组</span><br><span class="line"> * @return string</span><br><span class="line"> */</span><br><span class="line">function json_encode_no_zh($arr) &#123;</span><br><span class="line">    $str = str_replace( &quot;\\/&quot;, &quot;/&quot;, json_encode($arr));</span><br><span class="line">    $search = &quot;#\\\u([0-9a-f]+)#ie&quot;;</span><br><span class="line"></span><br><span class="line">    if (strpos(strtoupper(PHP_OS), &apos;WIN&apos;) === false) &#123;</span><br><span class="line">        $replace = &quot;iconv(&apos;UCS-2BE&apos;, &apos;UTF-8&apos;, pack(&apos;H4&apos;, &apos;\\1&apos;))&quot;;//LINUX</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        $replace = &quot;iconv(&apos;UCS-2&apos;, &apos;UTF-8&apos;, pack(&apos;H4&apos;, &apos;\\1&apos;))&quot;;//WINDOWS</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return preg_replace($search, $replace, $str);</span><br><span class="line">&#125;</span><br><span class="line">**注意：preg_replace（）方法在新版本php中替换为了preg_replace_callback（）**</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/10/无刷新评论功能实现总结/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Mr.d" />
+          <p class="site-author-name" itemprop="name">Mr.d</p>
+          <p class="site-description motion-element" itemprop="description">记录自己的学习路程！</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Damocle" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/mrding1236" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#第一个问题-php如何识别并获取ajax发送过来的数据？"><span class="nav-number">1.</span> <span class="nav-text">第一个问题: php如何识别并获取ajax发送过来的数据？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第二个问题-php如何将数据表中数组形式数据以json数据形式返回ajax"><span class="nav-number">2.</span> <span class="nav-text">第二个问题: php如何将数据表中数组形式数据以json数据形式返回ajax?</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mr.d</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
