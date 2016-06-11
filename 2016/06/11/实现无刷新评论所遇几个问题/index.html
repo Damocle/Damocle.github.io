@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="javasript,php,ajax," />
 
 
 
@@ -84,28 +84,19 @@
 
 
 
-<meta name="description" content="title: 实现无刷新评论所遇几个问题categories:
-
-JAVASCRIPTdate: 2016-06-11 22:51:17tags: javasript,php,ajax
-
-使用AJAX与PHP实现无刷新评论的功能，原理是很简单的，首先使用javascript获取到表单提交的数据，之后通过ajax使用post方法传值给php,之后php在进行数据的验证之后插入数据表，并把该值再返回">
+<meta name="description" content="使用AJAX与PHP实现无刷新评论的功能，原理是很简单的，首先使用javascript获取到表单提交的数据，之后通过ajax使用post方法传值给php,之后php在进行数据的验证之后插入数据表，并把该值再返回给Ajax用于在前台显示，但在这里我遇到二个问题。
+第一个问题: php如何识别并获取ajax发送过来的数据？我在网上查询之后，发现大部分网友给的答案是使用$_POST方法直接获取。。。我尝">
 <meta property="og:type" content="article">
-<meta property="og:title" content="丁先生">
+<meta property="og:title" content="实现无刷新评论所遇几个问题">
 <meta property="og:url" content="http://yoursite.com/2016/06/11/实现无刷新评论所遇几个问题/index.html">
 <meta property="og:site_name" content="丁先生">
-<meta property="og:description" content="title: 实现无刷新评论所遇几个问题categories:
-
-JAVASCRIPTdate: 2016-06-11 22:51:17tags: javasript,php,ajax
-
-使用AJAX与PHP实现无刷新评论的功能，原理是很简单的，首先使用javascript获取到表单提交的数据，之后通过ajax使用post方法传值给php,之后php在进行数据的验证之后插入数据表，并把该值再返回">
-<meta property="og:updated_time" content="2016-06-11T15:42:27.996Z">
+<meta property="og:description" content="使用AJAX与PHP实现无刷新评论的功能，原理是很简单的，首先使用javascript获取到表单提交的数据，之后通过ajax使用post方法传值给php,之后php在进行数据的验证之后插入数据表，并把该值再返回给Ajax用于在前台显示，但在这里我遇到二个问题。
+第一个问题: php如何识别并获取ajax发送过来的数据？我在网上查询之后，发现大部分网友给的答案是使用$_POST方法直接获取。。。我尝">
+<meta property="og:updated_time" content="2016-06-11T15:45:42.762Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="丁先生">
-<meta name="twitter:description" content="title: 实现无刷新评论所遇几个问题categories:
-
-JAVASCRIPTdate: 2016-06-11 22:51:17tags: javasript,php,ajax
-
-使用AJAX与PHP实现无刷新评论的功能，原理是很简单的，首先使用javascript获取到表单提交的数据，之后通过ajax使用post方法传值给php,之后php在进行数据的验证之后插入数据表，并把该值再返回">
+<meta name="twitter:title" content="实现无刷新评论所遇几个问题">
+<meta name="twitter:description" content="使用AJAX与PHP实现无刷新评论的功能，原理是很简单的，首先使用javascript获取到表单提交的数据，之后通过ajax使用post方法传值给php,之后php在进行数据的验证之后插入数据表，并把该值再返回给Ajax用于在前台显示，但在这里我遇到二个问题。
+第一个问题: php如何识别并获取ajax发送过来的数据？我在网上查询之后，发现大部分网友给的答案是使用$_POST方法直接获取。。。我尝">
 
 
 
@@ -128,7 +119,7 @@ JAVASCRIPTdate: 2016-06-11 22:51:17tags: javasript,php,ajax
 
   <link rel="canonical" href="http://yoursite.com/2016/06/11/实现无刷新评论所遇几个问题/"/>
 
-  <title>  | 丁先生 </title>
+  <title> 实现无刷新评论所遇几个问题 | 丁先生 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -258,7 +249,7 @@ JAVASCRIPTdate: 2016-06-11 22:51:17tags: javasript,php,ajax
             
             
               
-                
+                实现无刷新评论所遇几个问题
               
             
           </h1>
@@ -275,6 +266,49 @@ JAVASCRIPTdate: 2016-06-11 22:51:17tags: javasript,php,ajax
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/JAVASCRIPT/" itemprop="url" rel="index">
+                    <span itemprop="name">JAVASCRIPT</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/JAVASCRIPT/PHP/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/JAVASCRIPT/PHP/AJAX/" itemprop="url" rel="index">
+                    <span itemprop="name">AJAX</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
@@ -298,12 +332,7 @@ JAVASCRIPTdate: 2016-06-11 22:51:17tags: javasript,php,ajax
       
 
       
-        <hr>
-<p>title: 实现无刷新评论所遇几个问题<br>categories:</p>
-<ul>
-<li>JAVASCRIPT<br>date: 2016-06-11 22:51:17<br>tags: javasript,php,ajax</li>
-</ul>
-<p>使用AJAX与PHP实现无刷新评论的功能，原理是很简单的，首先使用javascript获取到表单提交的数据，之后通过ajax使用post方法传值给php,之后php在进行数据的验证之后插入数据表，并把该值再返回给Ajax用于在前台显示，但在这里我遇到二个问题。</p>
+        <p>使用AJAX与PHP实现无刷新评论的功能，原理是很简单的，首先使用javascript获取到表单提交的数据，之后通过ajax使用post方法传值给php,之后php在进行数据的验证之后插入数据表，并把该值再返回给Ajax用于在前台显示，但在这里我遇到二个问题。</p>
 <h4 id="第一个问题-php如何识别并获取ajax发送过来的数据？"><a href="#第一个问题-php如何识别并获取ajax发送过来的数据？" class="headerlink" title="第一个问题: php如何识别并获取ajax发送过来的数据？"></a>第一个问题: php如何识别并获取ajax发送过来的数据？</h4><p>我在网上查询之后，发现大部分网友给的答案是使用$_POST方法直接获取。。。我尝试之后发现，直接获取的数据为null(我将javascript获取得表单数据直接以json数据的格式使用ajax发送)，之后我意识到，<strong>在一种语言中的一种对象，或数据，在另一种语言中往往无法识别，我使用ajax发送js中的object对象（如： {data1: data1, data2: data2}）的数据给php，php是无法识别并获取的！</strong></p>
 <p>而我接着查询了<strong>$_POST方法获取的数据格式，是以键值对的形式构成的中间以&amp;分割（如：username=zhangsan&amp;password=123456&amp;email=lll@1123.com）</strong>。</p>
 <p>js代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">// 获取表单数据</span><br><span class="line"></span><br><span class="line">var arr      = [ &quot;images/1.jpg&quot;, &quot;images/2.jpg&quot;, </span><br><span class="line">                 &quot;images/3.jpg&quot;, &quot;images/4.jpg&quot;, </span><br><span class="line">                 &quot;images/5.jpg&quot;];</span><br><span class="line"></span><br><span class="line">var inputVal = document.getElementsByTagName(&quot;input&quot;),</span><br><span class="line">    // data存储表单数据</span><br><span class="line">    data = null;</span><br><span class="line">// 以键值对的形式存储</span><br><span class="line">for (var i = 0; i &lt; inputVal.length; i++ ) &#123;</span><br><span class="line">    if (i == 0) &#123;</span><br><span class="line">        data  = inputVal[i].name + &quot;=&quot; + inputVal[i].value + &quot;&amp;&quot;;</span><br><span class="line">    &#125; else if (inputVal[i].name != &quot;&quot;) &#123;</span><br><span class="line">        data += inputVal[i].name + &quot;=&quot; + inputVal[i].value + &quot;&amp;&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">var oFace    = arr[Math.floor(Math.random() * 5) + 1];</span><br><span class="line">var content  = document.getElementById(&quot;content_text&quot;).value;</span><br><span class="line"></span><br><span class="line">data += &quot;face=&quot; + oFace; </span><br><span class="line">data += &quot;&amp;content=&quot; + content;</span><br></pre></td></tr></table></figure></p>
@@ -333,6 +362,12 @@ JAVASCRIPTdate: 2016-06-11 22:51:17tags: javasript,php,ajax
     </div>
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/javasript-php-ajax/" rel="tag">#javasript,php,ajax</a>
+          
+        </div>
       
 
       
@@ -421,7 +456,7 @@ JAVASCRIPTdate: 2016-06-11 22:51:17tags: javasript,php,ajax
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -430,7 +465,7 @@ JAVASCRIPTdate: 2016-06-11 22:51:17tags: javasript,php,ajax
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
