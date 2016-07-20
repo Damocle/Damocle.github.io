@@ -248,6 +248,153 @@
             
               
                 
+                <a class="post-title-link" href="/2015/10/20/js-e7-ac-94-e8-ae-b0-e5-8f-98-e9-87-8f-e6-89-a7-e8-a1-8c-e7-8e-af-e5-a2-83-e5-8f-8a-e4-bd-9c-e7-94-a8-e5-9f-9f/" itemprop="url">
+                  JS笔记--变量执行环境及作用域
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-10-20T21:02:29+08:00" content="2015-10-20">
+              2015-10-20
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/JAVASCRIPT/" itemprop="url" rel="index">
+                    <span itemprop="name">JAVASCRIPT</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/10/20/js-e7-ac-94-e8-ae-b0-e5-8f-98-e9-87-8f-e6-89-a7-e8-a1-8c-e7-8e-af-e5-a2-83-e5-8f-8a-e4-bd-9c-e7-94-a8-e5-9f-9f/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/20/js-e7-ac-94-e8-ae-b0-e5-8f-98-e9-87-8f-e6-89-a7-e8-a1-8c-e7-8e-af-e5-a2-83-e5-8f-8a-e4-bd-9c-e7-94-a8-e5-9f-9f/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="javascript执行环境："><a href="#javascript执行环境：" class="headerlink" title="javascript执行环境："></a>javascript执行环境：</h3><p>执行环境： 定义了变量或函数有权访问的其他数据</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;每个执行环境都有一个与之关联的变量对像，环境中定义的所有变量和函数都保存在该环境中，</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;某个环境中所有代码执行完毕后，该环境被销毁，保存其中的变量和函数随之被销毁</p>
+<p>每个函数都有一个自己的执行环境，当代码执行到一个函数时，函数环境会被推入一个环境栈中，函数执行完毕后，栈将函数环境弹出，并把控制权返回给之前的环境</p>
+<p>而代码在一个环境执行时，会创建一个作用域链，作用域的前端始终都是当前执行代码所在环境的变量对象，全局执行环境的变量对象始终是作用域链的最后一个对象</p>
+<h3 id="Js的变量作用域：-—-静态作用域（没有块级作用域-if、while等不会产生作用域）"><a href="#Js的变量作用域：-—-静态作用域（没有块级作用域-if、while等不会产生作用域）" class="headerlink" title="Js的变量作用域： — 静态作用域（没有块级作用域 if、while等不会产生作用域）"></a>Js的变量作用域： — 静态作用域（没有块级作用域 if、while等不会产生作用域）</h3><pre class="brush:js;toolbar:false">var&nbsp;x&nbsp;=&nbsp;10;
+function&nbsp;foo(y)&nbsp;{
+&nbsp;&nbsp;var&nbsp;z&nbsp;=&nbsp;30;
+&nbsp;&nbsp;function&nbsp;bar(q)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;r&nbsp;=&nbsp;20;
+&nbsp;&nbsp;&nbsp;return&nbsp;x&nbsp;+&nbsp;y&nbsp;+&nbsp;z&nbsp;+q&nbsp;+&nbsp;r;
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;//&nbsp;bar&nbsp;环境中可以访问&nbsp;z、x、r
+&nbsp;&nbsp;&nbsp;//作用域链&nbsp;&nbsp;bar环境&nbsp;--&gt;&nbsp;foo环境&nbsp;&nbsp;--&gt;&nbsp;全局环境
+&nbsp;&nbsp;}
+&nbsp;&nbsp;return&nbsp;bar;
+&nbsp;&nbsp;
+&nbsp;&nbsp;//&nbsp;foo环境中可以访问z、x&nbsp;不能访问r
+&nbsp;&nbsp;//作用域链&nbsp;&nbsp;&nbsp;foo环境&nbsp;&nbsp;--&gt;&nbsp;全局环境
+&nbsp;&nbsp;
+}
+
+//&nbsp;全局环境中不可访问z、r&nbsp;
+//&nbsp;作用域链&nbsp;&nbsp;全局环境
+var&nbsp;bar&nbsp;=&nbsp;foo(20);
+bar(40);</pre>
+
+<p>内部环境可以通过作用域链访问所有外部环境，但外部环境不能访问内部环境中的任何变量和函数</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2015/10/18/e5-93-88-e5-93-88-ef-bc-8c-e8-bf-99-e4-b8-aa-e4-b8-bb-e9-a2-98-e7-bb-88-e4-ba-8e-e5-81-9a-e5-a5-bd-e4-ba-86-ef-bc-81-ef-bc-81-ef-bc-81-welcome-to-visit/" itemprop="url">
                   哈哈，这个主题终于做好了！！！ Welcome to visit!
                 </a>
@@ -289,6 +436,13 @@
           
 
           
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/10/18/e5-93-88-e5-93-88-ef-bc-8c-e8-bf-99-e4-b8-aa-e4-b8-bb-e9-a2-98-e7-bb-88-e4-ba-8e-e5-81-9a-e5-a5-bd-e4-ba-86-ef-bc-81-ef-bc-81-ef-bc-81-welcome-to-visit/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/18/e5-93-88-e5-93-88-ef-bc-8c-e8-bf-99-e4-b8-aa-e4-b8-bb-e9-a2-98-e7-bb-88-e4-ba-8e-e5-81-9a-e5-a5-bd-e4-ba-86-ef-bc-81-ef-bc-81-ef-bc-81-welcome-to-visit/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
@@ -402,6 +556,13 @@
           
 
           
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/10/15/javascript-e6-95-b0-e6-8d-ae-e7-b1-bb-e5-9e-8b/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/15/javascript-e6-95-b0-e6-8d-ae-e7-b1-bb-e5-9e-8b/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
@@ -598,6 +759,13 @@ console.log(typeof&nbsp;a);&nbsp;//&nbsp;object2、instanceof
 
           
             
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/10/14/e8-af-bb-e4-b9-a6-ef-bc-81-e8-af-bb-e4-b9-a6-ef-bc-81-e8-af-bb-e4-b9-a6-ef-bc-81/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/14/e8-af-bb-e4-b9-a6-ef-bc-81-e8-af-bb-e4-b9-a6-ef-bc-81-e8-af-bb-e4-b9-a6-ef-bc-81/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -694,7 +862,7 @@ console.log(typeof&nbsp;a);&nbsp;//&nbsp;object2、instanceof
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">23</span>
+              <span class="site-state-item-count">24</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -702,7 +870,7 @@ console.log(typeof&nbsp;a);&nbsp;//&nbsp;object2、instanceof
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -711,7 +879,7 @@ console.log(typeof&nbsp;a);&nbsp;//&nbsp;object2、instanceof
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -859,9 +1027,28 @@ console.log(typeof&nbsp;a);&nbsp;//&nbsp;object2、instanceof
 
   
 
+  
+    
+  
 
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"mrding1236.duoshuo.com"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
 
   
+    
+  
+
+
 
 
 
